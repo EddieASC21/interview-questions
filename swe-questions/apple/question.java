@@ -33,20 +33,29 @@ There is no intersection and so we return a list such as
 
 iphone 13 : [["USA", "BRAZIL"], ["ENGLAND", "BRAZIL"]]
 
-dict = {
-    iphone 13 : ["USA", "BRAZIL"]
-    iphone 14 : ["USA", "SPAIN"]
-    iphone 15 : ["SPAIN", "BRAZIL"]
-    iphone 14 : ["SPAIN", "BRAZIL"]
-    iphone 13 : ["ENGLAND", "BRAZIL"]
-    iphone 15 : ["USA", "ENGLAND"]
-}
+So the idea behind my code is that:
 
-dict = {
-    iphone 13 : [["USA", "BRAZIL"], ["ENGLAND", "BRAZIL"]]
-    iphone 14 : [["USA", "SPAIN", "BRAZIL"]]
-    iphone 15 : [["SPAIN", "BRAZIL"], ["USA", "ENGLAND"]]
-}
+I will create a new map where we now store the key still as a string but the value is a list of list of strings
+
+So what I will do is iterate over all the keys of the original map and add to the new map
+
+So now if the key is not yet in the new map then we add the key and its value as a list of list of string
+
+Now if the key does exist in the new map, then we call the helper function
+
+The way the helper function works is that we take the current value that is stored in the new map and initialize a new list of list
+
+We also get the current value of the key in the old map from this we keep track of its first and last values/strings/destinations
+
+We iterate over the new maps values which is a list of lists, so we do for each list in the list of lists
+
+We track the current list in the list we are on and track the values/strings/destinations of that list and compare it to the first value of the list from old map
+
+If they are equal then we add the last value from the old map's list onto the list of the new map
+
+Else we just add that list from the old map as a list into the list of lists of the new map
+
+Then we just add all of these new updates into our new map
 
 The time complexity is O(n * m) and so is the space complexity
  */
